@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Inconsolata');
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    font-size: 19px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 10px;
+    padding-left: 30px;
+    color: white;
+}
+
+.app-header>.title {
+    padding: 10px;
+    font-family: 'Caveat Brush', cursive;
+}
+
+.app-header>.tagline {
+    padding: 10px;
+    font-family: 'Inconsolata', monospace;
+}
+
+.container {
+    flex: 6;
+    display: flex;
+    height: 78vh;
+}
+
+pre, textarea {
+    width: 50%;
+    margin: 0;
+}
+
+pre.language-javascript {
+    margin: 0;
+}
+
+textarea {
+    font-size: 20px;
+    font-family: monospace;
+    resize: none;
+}
+
+textarea:focus{
+  outline: 0;
+}
+
+footer {
+    font-family: monospace;
+    flex: 2;
+    display: block;
+    height: 5vh;
+    overflow: auto;
+    background-color: pink;
+    padding: 20px;
+    color: red;
+    font-size: 14px;
+}
