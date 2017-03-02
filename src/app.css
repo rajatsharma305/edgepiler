@@ -32,15 +32,20 @@
     height: 78vh;
 }
 
-pre, textarea {
+pre{
     width: 50%;
     margin: 0;
+}
+
+.codecontainer{
+  width: 50%;
+  margin: 0;
 }
 
 pre.language-javascript {
     margin: 0;
 }
-
+/*
 textarea {
     font-size: 20px;
     font-family: monospace;
@@ -49,7 +54,7 @@ textarea {
 
 textarea:focus{
   outline: 0;
-}
+}*/
 
 footer {
     font-family: monospace;
