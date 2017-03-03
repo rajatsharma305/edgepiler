@@ -1,10 +1,10 @@
 import React from 'react';
+import { Menu } from 'semantic-ui-react';
 
-const Header = () => (
-  <div className="app-header">
-    <span className="title">EdgePiler</span>
-    <span className="tagline">Bleeding Edge JS to Edge Compatible JS</span>
-  </div>
-);
+const Header = () =>
+  <Menu attached inverted size='large'>
+    <Menu.Item header>EdgePiler</Menu.Item>
+  </Menu>
+
 
 export default Header;

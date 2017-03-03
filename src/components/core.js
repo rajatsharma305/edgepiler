@@ -1,77 +1,71 @@
 import React, { Component } from 'react';
-import Footer from './footer.js';
-import AceEditor from 'react-ace';
+import Footer from './footer';
+import Editor from './editor';
 import Lebab from 'lebab';
-import '../prism.css';
-
-
-import 'brace/mode/javascript';
-import 'brace/theme/monokai';
+import { Grid } from 'semantic-ui-react';
 
 class Core extends Component {
-  constructor(){
-    super();
-    this.state = {
-      input:'/* Enter ES6 Here */',
-      output:'',
-      err:'If something goes wrong, see here for details'
-    }
+
+  state = {
+    input:'/* Enter ES6 Here */',
+    output:'',
+    err:'If something goes wrong, see here for details'
   }
 
-  transpile(event){
+  transpile = event=>{
     let code = event;
     try{
       this.setState({
         input:code,
         output:window.Babel.transform(code,{presets:['es2015','react']}).code,
-        err:''
+        err:'All Good',
+        errType:'Success'
       })
     }catch(e){
       this.setState({
         input:code,
-        err:e.message
+        err:e.message,
+        errType:'Failure'
       })
     }
   }
 
-  detranspile(event){
+  detranspile = event=>{
     let code = event;
     try{
       this.setState({
-        input:Lebab.transform(code,['let', 'arrow']).code,
+        input:Lebab.transform(code,['arrow']).code,
         output:code,
-        err:''
+        err:'All Good',
+        errType:'Success'
       })
     }catch(e){
       this.setState({
         output:code,
-        err:e.message
+        err:e.message,
+        errType:'Failure'
       })
     }
   }
 
   render() {
     return(
-      <div>
-        <div className="container">
-          <AceEditor
-            height='78vh'
-            width='50%'
-            mode='javascript'
-            theme='monokai'
-            showPrintMargin={false}
-            value={this.state.input}
-            onChange={this.transpile.bind(this)}/>
-          <AceEditor
-            height='78vh'
-            width='50%'
-            mode='javascript'
-            theme='github'
-            showPrintMargin={false}
-            value={this.state.output}
-            onChange={this.detranspile.bind(this)}/>
-        </div>
-        <Footer error={this.state.err}/>
+      <div className='core'>
+        <Grid columns={2} stretched className='codecontainer'>
+          <Grid.Row>
+            <Grid.Column>
+              <Editor
+                value={this.state.input}
+                changeEmitter={this.transpile}/>
+            </Grid.Column>
+            <Grid.Column>
+              <Editor
+                value={this.state.output}
+                changeEmitter={this.detranspile}/>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <Footer error={this.state.err} errorType={this.state.errType}/>
       </div>
     )
   }
