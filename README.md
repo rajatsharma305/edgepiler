@@ -1,6 +1,6 @@
-## EdgePiler
+## λ-Morpher
 
-## Test, Try, Transpile your ES6 code to Older Vanilla Js and Vice Versa 😏
+## Transforms your λ-Functions to _functions_ and vice versa.
 
 Made with React [⚛️](https://facebook.github.io/react/)
 
