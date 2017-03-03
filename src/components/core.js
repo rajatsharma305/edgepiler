@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './footer';
 import Editor from './editor';
-import LambdaLebeb from 'lambdalebab';
+import lambdalebab from 'lambdalebab';
 import { Grid } from 'semantic-ui-react';
 
 class Core extends Component {
@@ -34,7 +34,7 @@ class Core extends Component {
     let code = event;
     try{
       this.setState({
-        input:LambdaLebeb.transform(code,['arrow','const']).code,
+        input:lambdalebab.transform(code,['arrow']).code,
         output:code,
         err:'All Good',
         errType:'Success'
