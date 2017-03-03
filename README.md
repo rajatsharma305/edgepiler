@@ -1,6 +1,6 @@
 ## λ-Morpher
 
-## Transforms your λ-Functions to _functions_ and vice versa.
+### Transforms your λ-Functions to _functions_ and vice versa.
 
 Made with React [⚛️](https://facebook.github.io/react/)
 
