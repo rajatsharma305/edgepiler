@@ -1,5 +1,5 @@
 {
-  "name": "edgepiler",
+  "name": "lambdamorpher",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -10,7 +10,7 @@
     "babel-standalone": "^6.23.1",
     "brace": "^0.10.0",
     "cxs": "^3.0.4",
-    "lebab": "^2.7.1",
+    "lambdalebab": "^0.1.0",
     "react": "^15.4.2",
     "react-ace": "^4.1.6",
     "react-dom": "^15.4.2",
