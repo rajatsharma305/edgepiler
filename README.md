@@ -14,4 +14,6 @@ Made with React [⚛️](https://facebook.github.io/react/)
  * [create-react-app](https://github.com/facebookincubator/create-react-app)
  * _and ❤️_
 
-Under Development
+### Changes 🚂
+
+* Left Panel for Functional expressions and right for λ expressions.🙂

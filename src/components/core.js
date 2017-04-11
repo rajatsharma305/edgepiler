@@ -7,8 +7,8 @@ import { Grid } from 'semantic-ui-react';
 class Core extends Component {
 
   state = {
-    input:'/* Enter ES6 Here */',
-    output:'',
+    input:'//Enter λ expressions to convert',
+    output:'//Enter functions expressions to convert',
     err:'If something goes wrong, see here for details'
   }
 
@@ -55,13 +55,13 @@ class Core extends Component {
           <Grid.Row>
             <Grid.Column>
               <Editor
-                value={this.state.input}
-                changeEmitter={this.transpile}/>
+                value={this.state.output}
+                changeEmitter={this.detranspile}/>
             </Grid.Column>
             <Grid.Column>
               <Editor
-                value={this.state.output}
-                changeEmitter={this.detranspile}/>
+                value={this.state.input}
+                changeEmitter={this.transpile}/>
             </Grid.Column>
           </Grid.Row>
         </Grid>
